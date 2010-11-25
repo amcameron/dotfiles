@@ -23,9 +23,8 @@ set hlsearch
 set scrolloff=3
 set showcmd
 set wildmenu
-set wildmode=list:longest
+set wildmode=longest:full
 set visualbell
-set cursorline
 
 " Turn off highlighting with <leader><space>
 nnoremap <leader><space> :noh<cr>
