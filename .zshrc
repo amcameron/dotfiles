@@ -36,7 +36,8 @@ alias ll="ls -l"
 alias la="ls -a"
 alias grep="grep --color=always"
 alias engterm="rdesktop -g 1280x800 -u a4camero engterm.uwaterloo.ca >/dev/null 2>&1 &"
-alias git="hub"
+alias git=hub
+compdef hub=git
 # }}}
 
 # {{{ Virtualenv wrapper
