@@ -57,3 +57,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set noexpandtab
+
+" A little fun.  Requires figlet.
+noremap <Up><Up><Down><Down><Left><Right><Left><Right>ba<CR> :botright !figlet "Vim    FTW"<CR>
