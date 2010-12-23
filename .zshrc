@@ -64,6 +64,9 @@ zstyle ':vcs_info:*' enable git
 setopt NO_HUP
 setopt CHECK_JOBS
 
+# Make sure ~/bin/ is on the path
+export PATH=$PATH:~/bin/
+
 # }}}
 
 # {{{ Functions
