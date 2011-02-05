@@ -60,3 +60,6 @@ set noexpandtab
 
 " A little fun.  Requires figlet.
 noremap <Up><Up><Down><Down><Left><Right><Left><Right>ba<CR> :botright !figlet "Vim    FTW"<CR>
+
+" Break long lines automatically.
+set tw=79
