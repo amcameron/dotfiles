@@ -7,6 +7,13 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 au BufRead,BufNew *.pde set ft=arduino
 
+" Enable 256 color support.
+set t_Co=256
+" TODO: Set the terminal's color scheme to solarized.
+let g:solarized_termcolors=16
+set background=dark
+colors solarized
+
 syntax enable
 
 " Make backspace behave sanely.
