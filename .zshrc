@@ -40,11 +40,11 @@ fi
 # }}}
 
 # {{{ Aliases
-if [ -z "$MAC" ] ; then
-	alias ls="ls -F --color=always"
-else
-	alias ls="ls -FG"
+if [ -z "$MAC" ]
+then LSCOLOR="--color=always"
+else LSCOLOR="-G"
 fi
+alias ls="ls -F $LSCOLOR"
 alias ll="ls -l"
 alias la="ls -a"
 alias grep="grep --color=always"
