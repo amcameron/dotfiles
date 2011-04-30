@@ -30,6 +30,15 @@ bindkey -v
 
 # {{{ User settings
 
+# {{{ Environment variables
+
+MAC=""
+if [ "`uname`" = "Darwin" ] ; then
+	MAC="true"
+fi
+
+# }}}
+
 # {{{ Aliases
 alias ls="ls -F --color=always"
 alias ll="ls -l"
