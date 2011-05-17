@@ -56,7 +56,9 @@ alias ga="gitk --all >/dev/null 2>&1 &"
 
 # {{{ Virtualenv wrapper
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
+	source /usr/local/bin/virtualenvwrapper.sh
+fi
 # }}}
 # }}}
 
