@@ -191,15 +191,15 @@ $PR_GREEN$PR_SHIFT_IN$PR_LLCORNER$PR_GREEN$PR_HBAR$PR_SHIFT_OUT(\
     esac
 }
 
-# Prompt init
-setprompt
-
 # Use 256 colours
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
 	export TERM=xterm-256color
 else
 	export TERM=xterm-color
 fi
+
+# Prompt init
+setprompt
 
 # }}}
 # }}}
