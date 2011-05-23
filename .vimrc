@@ -1,7 +1,26 @@
-" Load Pathogen.
+" {{{ Load Vundle.
 filetype off
-call pathogen#runtime_append_all_bundles()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle.
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original github repos
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'jpalardy/vim-slime'
+Bundle 'msanders/snipmate.vim'
+
+" non-github repos
+Bundle 'git://git.wincent.com/command-t.git'
+
 filetype plugin indent on
+" }}}
 
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
@@ -32,6 +51,7 @@ set showcmd
 set wildmenu
 set wildmode=longest:full
 set visualbell
+set ruler
 
 " Always show a statusline.
 set laststatus=2
