@@ -11,10 +11,14 @@ Bundle 'gmarik/vundle'
 " original github repos
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'jpalardy/vim-slime'
 Bundle 'msanders/snipmate.vim'
+
+" vim-scripts repos
+Bundle 'AutoComplPop'
 
 " non-github repos
 Bundle 'git://git.wincent.com/command-t.git'
