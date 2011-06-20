@@ -33,6 +33,9 @@ set wildmenu
 set wildmode=longest:full
 set visualbell
 
+" Always show a statusline.
+set laststatus=2
+
 " Turn off highlighting with <leader><space>
 nnoremap <leader><space> :noh<cr>
 
@@ -46,7 +49,7 @@ nnoremap <leader>w gwip
 nnoremap <leader>v `[v`]
 
 " Make NERDTree easier to access
-nnoremap <F2> :NERDTreeToggle<cr>
+"nnoremap <F2> :NERDTreeToggle<cr>
 
 " Make it easier to toggle paste mode - mappings are checked first,
 " so this works only in Insert mode.  Which is perfect.
@@ -59,11 +62,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Tab settings: 4 spaces to a tab!  But don't expand them.
+" Tab settings: 4 spaces to a tab!
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set noexpandtab
+set expandtab
 
 " A little fun.  Requires figlet.
 noremap <Up><Up><Down><Down><Left><Right><Left><Right>ba<CR> :botright !figlet "Vim    FTW"<CR>

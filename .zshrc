@@ -82,6 +82,9 @@ setopt CHECK_JOBS
 # Make sure ~/bin/ is on the path
 export PATH=$PATH:~/bin/
 
+# Even though we're using vi keybindings, use ^r for reverse history search.
+bindkey '^R' history-incremental-search-backward
+
 # }}}
 
 # {{{ Functions
