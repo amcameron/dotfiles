@@ -62,6 +62,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Don't let Vim-LaTeXSuite get in the way of my <C-j> mapping!
+map <C-space> <Plug>IMAP_JumpForward
+
 " Tab settings: 4 spaces to a tab!
 set tabstop=4
 set shiftwidth=4
