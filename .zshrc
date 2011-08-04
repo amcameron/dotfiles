@@ -60,6 +60,14 @@ if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
 	source /usr/local/bin/virtualenvwrapper.sh
 fi
 # }}}
+
+# {{{ Workarounds
+# Speed up git completion on large repositories.
+__git_files () { 
+    _wanted files expl 'local files' _files 
+}
+# }}}
+
 # }}}
 
 # {{{ ZSH settings
