@@ -87,7 +87,13 @@ zstyle ':vcs_info:*' enable git
 setopt NO_HUP
 setopt CHECK_JOBS
 
-# Make sure ~/bin/ is on the path
+# If on Mac, make sure that /usr/local/bin appears before /usr/bin, so that
+# Homebrew formulae run instead of Mac OS commands.
+if [ -z "$MAC" ]
+then export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+fi
+
+# Ensure that ~/bin/ is on the path.
 export PATH=$PATH:~/bin/
 
 # Even though we're using vi keybindings, use ^r for reverse history search.

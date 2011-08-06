@@ -16,9 +16,11 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'jpalardy/vim-slime'
 Bundle 'msanders/snipmate.vim'
+Bundle 'fholgado/minibufexpl.vim'
 
 " vim-scripts repos
 Bundle 'AutoComplPop'
+Bundle 'taglist.vim'
 
 " non-github repos
 Bundle 'git://git.wincent.com/command-t.git'
@@ -100,3 +102,12 @@ noremap <Up><Up><Down><Down><Left><Right><Left><Right>ba<CR> :botright !figlet "
 
 " Break long lines automatically.
 set tw=79
+
+" Allow completion of snipMate snippets.
+let g:acp_behaviorSnipmateLength = 1
+
+" Preview extra information about omnicompletions.
+set completeopt=menuone,longest,preview
+
+" Ensure we're using the correct ctags.
+let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
