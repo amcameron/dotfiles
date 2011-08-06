@@ -21,6 +21,9 @@ Bundle 'fholgado/minibufexpl.vim'
 " vim-scripts repos
 Bundle 'AutoComplPop'
 Bundle 'taglist.vim'
+"Bundle 'VimPdb'
+"Bundle 'Jinja'
+Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 
 " non-github repos
 Bundle 'git://git.wincent.com/command-t.git'
@@ -88,6 +91,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Don't let Vim-LaTeXSuite get in the way of my <C-j> mapping!
+map <C-space> <Plug>IMAP_JumpForward
+
+" Tab settings: 4 spaces to a tab!  But don't expand them.
 " Don't let Vim-LaTeXSuite get in the way of my <C-j> mapping!
 map <C-space> <Plug>IMAP_JumpForward
 
