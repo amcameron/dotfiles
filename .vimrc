@@ -85,7 +85,6 @@ nnoremap <leader>v `[v`]
 set pastetoggle=<F2>
 
 " Make splitting and split navigation easier
-nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
