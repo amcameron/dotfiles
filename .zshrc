@@ -1,3 +1,9 @@
+# Denotes whether on a Mac or not.
+MAC=""
+if [ "`uname`" = "Darwin" ] ; then
+	MAC="true"
+fi
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -21,16 +27,14 @@ export ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump brew git github vi-mode)
+if [[ -n "$MAC" ]]
+    then plugins=(autojump brew git github vi-mode)
+    else plugins=(git github vi-mode)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-MAC=""
-if [ "`uname`" = "Darwin" ] ; then
-	MAC="true"
-fi
-
 export WORKON_HOME=$HOME/.virtualenvs
 if [ -e /usr/local/bin/virtualenvwrapper.sh ]
 then source /usr/local/bin/virtualenvwrapper.sh
