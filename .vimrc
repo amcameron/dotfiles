@@ -63,7 +63,16 @@ set visualbell
 set ruler
 
 " Always show a statusline.
+" Statusline format stolen and commented from tpope's statusline here:
+" http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
 set laststatus=2
+set statusline=[%n]\ %<%.99f\ %h%w%m%r     " buffer number, filename, flags
+set statusline+=%{exists('*CapsLockStatusline')?CapsLockStatusline():''}
+set statusline+=%y                         " filetype
+set statusline+=%=                         " right-aligned status stuff next
+set statusline+=%{fugitive#statusline()}   " git status
+set statusline+=%-16(\ %l,%c-%v\ %)        " line#,col#-virtcol#
+set statusline+=%P                         " percentage through file
 
 " Turn off highlighting with <leader><space>
 nnoremap <leader><space> :noh<cr>
@@ -93,7 +102,6 @@ nnoremap <C-l> <C-w>l
 " Don't let Vim-LaTeXSuite get in the way of my <C-j> mapping!
 map <C-space> <Plug>IMAP_JumpForward
 
-" Tab settings: 4 spaces to a tab!  But don't expand them.
 " Don't let Vim-LaTeXSuite get in the way of my <C-j> mapping!
 map <C-space> <Plug>IMAP_JumpForward
 
