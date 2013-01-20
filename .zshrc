@@ -68,5 +68,8 @@ fi
 # Ensure that ~/bin/ is on the path.
 export PATH=$PATH:~/bin/
 
+# Use hub to wrap git.
+eval "$(hub alias -s)"
+
 # Even though we're using vi keybindings, use ^r for reverse history search.
 bindkey '^R' history-incremental-search-backward
