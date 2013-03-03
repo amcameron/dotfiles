@@ -87,8 +87,9 @@ nnoremap <leader>w gwip
 " Select the text that was just pasted, yanked, changed, etc.
 nnoremap <leader>v `[v`]
 
-" Make NERDTree easier to access
-"nnoremap <F2> :NERDTreeToggle<cr>
+" j/k > +/-, so make the latter two more useful.
+map + <C-W>+
+map - <C-W>-
 
 " Make it easier to toggle paste mode - mappings are checked first,
 " so this works only in Insert mode.  Which is perfect.
@@ -99,9 +100,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" Don't let Vim-LaTeXSuite get in the way of my <C-j> mapping!
-map <C-space> <Plug>IMAP_JumpForward
 
 " Don't let Vim-LaTeXSuite get in the way of my <C-j> mapping!
 map <C-space> <Plug>IMAP_JumpForward
@@ -126,3 +124,10 @@ set completeopt=menuone,longest,preview
 
 " Ensure we're using the correct ctags.
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+
+" Extra whitespace highlighting
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
