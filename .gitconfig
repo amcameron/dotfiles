@@ -1,0 +1,12 @@
+[user]
+	name = Andrew Cameron
+	email = andrew@acameron.org
+[alias]
+	st = status
+	ap = add -p
+	ci = commit
+	co = checkout
+[color]
+	ui = auto
+[include]
+    path = .gitconfig-private
