@@ -17,6 +17,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'jpalardy/vim-slime'
 Bundle 'msanders/snipmate.vim'
 Bundle 'fholgado/minibufexpl.vim'
+Bundle 'bingaman/vim-sparkup'
 
 " vim-scripts repos
 Bundle 'AutoComplPop'
