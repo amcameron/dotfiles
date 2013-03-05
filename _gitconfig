@@ -1,6 +1,8 @@
 [user]
 	name = Andrew Cameron
 	email = andrew@acameron.org
+[core]
+	editor = /usr/bin/vim
 [alias]
 	st = status
 	ap = add -p
