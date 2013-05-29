@@ -17,10 +17,11 @@ Bundle 'tpope/vim-surround'
 Bundle 'jpalardy/vim-slime'
 Bundle 'msanders/snipmate.vim'
 Bundle 'fholgado/minibufexpl.vim'
-Bundle 'bingaman/vim-sparkup'
+Bundle 'tristen/vim-sparkup'
+Bundle 'nvie/vim-flake8'
+Bundle 'davidhalter/jedi-vim'
 
 " vim-scripts repos
-Bundle 'AutoComplPop'
 Bundle 'taglist.vim'
 "Bundle 'VimPdb'
 "Bundle 'Jinja'
@@ -32,6 +33,20 @@ Bundle 'git://git.wincent.com/command-t.git'
 filetype plugin indent on
 " }}}
 
+" With minibufexpl, jedi-vim should use buffers, not tabs.
+let g:jedi#use_tabs_not_buffers = 0
+
+" If a virtualenv is active, add its site-packages to vim path.
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 au BufRead,BufNew *.pde set ft=arduino
