@@ -28,7 +28,7 @@ export ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ -n "$MAC" ]]
-    then plugins=(autojump brew git github vi-mode)
+    then plugins=(autojump brew git vi-mode)
     else plugins=(git github vi-mode)
 fi
 
