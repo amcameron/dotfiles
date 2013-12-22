@@ -20,6 +20,7 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'tristen/vim-sparkup'
 Bundle 'nvie/vim-flake8'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'godlygeek/tabular'
 
 " vim-scripts repos
 Bundle 'taglist.vim'
@@ -102,6 +103,12 @@ nnoremap <leader>w gwip
 " Select the text that was just pasted, yanked, changed, etc.
 nnoremap <leader>v `[v`]
 
+" Use Tabular to align text.
+if exists(":Tabularize")
+    nnoremap <leader>amp :Tabular /&<cr>
+    vnoremap <leader>amp :Tabular /&<cr>
+endif
+
 " j/k > +/-, so make the latter two more useful.
 map + <C-W>+
 map - <C-W>-
@@ -131,9 +138,6 @@ noremap <Up><Up><Down><Down><Left><Right><Left><Right>ba<CR> :botright !figlet "
 " Break long lines automatically.
 set tw=79
 
-" Allow completion of snipMate snippets.
-let g:acp_behaviorSnipmateLength = 1
-
 " Preview extra information about omnicompletions.
 set completeopt=menuone,longest,preview
 
@@ -146,3 +150,6 @@ au ColorScheme * highlight ExtraWhitespace guibg=red
 au BufEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
+
+" Check for formatting and programming errors in Python files.
+nnoremap <leader>8 call Flake8()
