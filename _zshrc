@@ -34,10 +34,20 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# If on Mac, make sure that /usr/local/bin appears before /usr/bin, so that
+# Homebrew formulae run instead of Mac OS commands.
+if [ -n "$MAC" ]
+then export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+fi
+
+# virtualenvwrapper should play nice with pip.
 export WORKON_HOME=$HOME/.virtualenvs
-if [ -e /usr/local/bin/virtualenvwrapper.sh ]
-then source /usr/local/bin/virtualenvwrapper.sh
+export PROJECT_HOME=$HOME/Documents/programming
+if [[ -e /usr/local/bin/virtualenvwrapper_lazy.sh ]]
+then
+    source /usr/local/bin/virtualenvwrapper_lazy.sh
+    export PIP_VIRTUALENV_BASE=$WORKON_HOME
+    export PIP_RESPECT_VIRTUALENV=true
 fi
 
 if [ -z "$MAC" ]
@@ -59,17 +69,14 @@ __git_files () {
 setopt NO_HUP
 setopt CHECK_JOBS
 
-# If on Mac, make sure that /usr/local/bin appears before /usr/bin, so that
-# Homebrew formulae run instead of Mac OS commands.
-if [ -z "$MAC" ]
-then export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-fi
-
 # Ensure that ~/bin is on the path.
 export PATH=$PATH:~/bin
 
 # Use hub to wrap git.
 eval "$(hub alias -s zsh)"
+
+# Use gitignore.io to generate gitignore files.
+function gi() { curl http://gitignore.io/api/$@ ;}
 
 # Even though we're using vi keybindings, use ^r for reverse history search.
 bindkey '^R' history-incremental-search-backward
