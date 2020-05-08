@@ -29,17 +29,24 @@ export ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ -n "$MAC" ]]
     then plugins=(autojump brew git vi-mode)
-    else plugins=(git github vi-mode)
+    else plugins=(autojump git github vi-mode)
+fi
+
+# Warn if connected remotely. Put this prefix in the prompt before the cwd.
+if [ -n "$SSH_CLIENT" ]; then
+    export PROMPTSSHPREFIX="%m:"
 fi
 
 source $ZSH/oh-my-zsh.sh
 
+# Customize to your needs...
 # If on Mac, make sure that /usr/local/bin appears before /usr/bin, so that
 # Homebrew formulae run instead of Mac OS commands.
 if [ -n "$MAC" ]
 then export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 fi
 
+export EDITOR=vim
 # virtualenvwrapper should play nice with pip.
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Documents/programming
@@ -57,8 +64,9 @@ fi
 alias ls="ls -F $LSCOLOR"
 alias ll="ls -l"
 alias la="ls -a"
-alias grep="grep --color=always"
+alias grep="grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn"
 alias ga="gitk --all >/dev/null 2>&1 &"
+alias open="xdg-open"
 
 # Speed up git completion on large repositories.
 __git_files () { 
@@ -80,3 +88,8 @@ function gi() { curl http://gitignore.io/api/$@ ;}
 
 # Even though we're using vi keybindings, use ^r for reverse history search.
 bindkey '^R' history-incremental-search-backward
+
+# Make sure we use the correct erase key codes.
+#if tty --quiet ; then
+#    stty erase '^?'
+#fi
