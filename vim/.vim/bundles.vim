@@ -18,14 +18,18 @@ Bundle 'tpope/vim-surround'
 Bundle 'jpalardy/vim-slime'
 Bundle 'msanders/snipmate.vim'
 Bundle 'fholgado/minibufexpl.vim'
-Bundle 'bingaman/vim-sparkup'
+Bundle 'tristen/vim-sparkup'
+Bundle 'nvie/vim-flake8'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'godlygeek/tabular'
+Bundle 'AndrewRadev/sideways.vim.git'
 
 " vim-scripts repos
-Bundle 'AutoComplPop'
 Bundle 'taglist.vim'
 "Bundle 'VimPdb'
 "Bundle 'Jinja'
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+Bundle 'csharp.vim'
 
 " non-github repos
 Bundle 'git://git.wincent.com/command-t.git'

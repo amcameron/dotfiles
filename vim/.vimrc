@@ -1,38 +1,4 @@
-" {{{ Load Vundle.
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Let Vundle manage Vundle.
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original github repos
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'jpalardy/vim-slime'
-Bundle 'msanders/snipmate.vim'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'tristen/vim-sparkup'
-Bundle 'nvie/vim-flake8'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'godlygeek/tabular'
-
-" vim-scripts repos
-Bundle 'taglist.vim'
-"Bundle 'VimPdb'
-"Bundle 'Jinja'
-Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
-
-" non-github repos
-Bundle 'git://git.wincent.com/command-t.git'
-
-filetype plugin indent on
-" }}}
+source ~/.vim/bundles.vim
 
 " With minibufexpl, jedi-vim should use buffers, not tabs.
 let g:jedi#use_tabs_not_buffers = 0
@@ -53,13 +19,11 @@ let g:tex_flavor='latex'
 au BufRead,BufNew *.pde set ft=arduino
 
 " Enable 256 color support.
+syntax enable
 set t_Co=256
-" TODO: Set the terminal's color scheme to solarized.
-let g:solarized_termcolors=16
 set background=dark
 colors solarized
 
-syntax enable
 
 " Make backspace behave sanely.
 set backspace=indent,eol,start
@@ -68,7 +32,9 @@ set backspace=indent,eol,start
 let mapleader = ","
 
 " Some nifty settings.
+set number
 set relativenumber
+set numberwidth=1
 set incsearch
 set showmatch
 set hlsearch
@@ -78,6 +44,7 @@ set wildmenu
 set wildmode=longest:full
 set visualbell
 set ruler
+set modeline
 
 " Always show a statusline.
 " Statusline format stolen and commented from tpope's statusline here:
@@ -153,3 +120,9 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Check for formatting and programming errors in Python files.
 nnoremap <leader>8 call Flake8()
+
+" Move list elements around more easily.
+nnoremap <c-m>h :SidewaysLeft<cr>
+nnoremap <c-m>l :SidewaysRight<cr>
+
+" vim:fdm=marker
