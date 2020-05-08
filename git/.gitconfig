@@ -8,7 +8,12 @@
 	ap = add -p
 	ci = commit
 	co = checkout
+	root = rev-parse --show-toplevel
 [color]
 	ui = auto
+[grep]
+	extendedRegexp = true
+[merge]
+	tool = vimdiff
 [include]
-    path = .gitconfig-private
+	path = .gitconfig-private
