@@ -93,3 +93,6 @@ bindkey '^R' history-incremental-search-backward
 #if tty --quiet ; then
 #    stty erase '^?'
 #fi
+
+# Custom tweaks. If the file doesn't exist then create it.
+source .zshrc-local 2>/dev/null || touch .zshrc-local
