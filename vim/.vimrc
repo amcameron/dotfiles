@@ -125,4 +125,7 @@ nnoremap <leader>8 call Flake8()
 nnoremap <c-m>h :SidewaysLeft<cr>
 nnoremap <c-m>l :SidewaysRight<cr>
 
+" Use tmux instead of screen for REPL sessions.
+let g:slime_target = "tmux"
+
 " vim:fdm=marker
